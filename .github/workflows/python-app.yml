@@ -34,7 +34,7 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest -q
+        pytest
 
     # training + prediksi setelah test dg pytest
     - name: Train & predict
