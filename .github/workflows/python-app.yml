@@ -42,8 +42,8 @@ jobs:
         python iris_classification.py --csv iris.csv
         python iris_classification.py --csv iris.csv --predict-file iris.csv --out-pred predictions.csv
 
-    # - name: Upload predictions.csv
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: predictions
-    #     path: predictions.csv
+    - name: Upload predictions.csv
+      uses: actions/upload-artifact@v4
+      with:
+        name: predictions
+        path: predictions.csv
