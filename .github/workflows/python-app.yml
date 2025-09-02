@@ -48,5 +48,5 @@ jobs:
         name: iris build-artifacts
         path: |
           artifacts/iris_model.joblib
-          artifact/predictions.csv
+          artifacts/predictions.csv
         if-no-files-found: error
