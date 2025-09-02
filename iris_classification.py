@@ -14,6 +14,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+import os, joblib
 
 # Kolom yg dipakai
 FEATURE_COLS = ["sepal.length", "sepal.width", "petal.length", "petal.width"]
@@ -45,6 +46,9 @@ def train_and_evaluate(X, y, test_size=0.2, random_state=42):
     ])
 
     model.fit(X_train, y_train)
+    os.makedirs("artifacts", exist_ok=True)
+    joblib.dump(model, "artifacts/iris_model.joblib")
+    print("[OK] Model tersimpan di artifacts/iris_model.joblib")
     y_pred = model.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
 
