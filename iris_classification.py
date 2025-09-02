@@ -112,6 +112,7 @@ def main():
                    help="Path CSV untuk PREDIKSI (batch). Kolom fitur harus sama.")
     p.add_argument("--out-pred", type=str, default=None,
                    help="Path CSV output hasil prediksi (opsional)")
+    p.add_argument("--model-path", default="artifacts/model.joblib")
     args = p.parse_args()
 
     # 1) load & tampilkan head
@@ -124,7 +125,8 @@ def main():
 
     # 2) training + evaluasi cepat
     model = train_and_evaluate(X, y)
-
+    os.makedirs(os.path.dirname(args.model_path), exist_ok=True)
+    joblib.dump(model, args.model_path)
     # 3) opsional: prediksi
     if args.predict_file:
         predict_from_csv(model, csv_path=args.predict_file, out_path=args.out_pred)

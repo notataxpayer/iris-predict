@@ -1,4 +1,4 @@
-name: Python application
+name: CI
 # File CI dari GH action (template dari GH)
 on:
   push:
