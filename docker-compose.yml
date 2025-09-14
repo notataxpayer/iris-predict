@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  iris:
+    image: ghcr.io/notataxpayer/iris-predict:dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - ./artifacts:/app/artifacts
