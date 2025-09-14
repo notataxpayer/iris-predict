@@ -53,8 +53,7 @@ jobs:
 
   docker_push:
     needs: build
-    # pakai runner kamu; pastikan Docker jalan di mesin itu
-    runs-on: customwin-runner
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
