@@ -21,8 +21,6 @@ Thumbs.db
 *.zip
 
 # Data & outputs (DO NOT commit datasets/model/artifacts)
-iris.csv
-data_uji.csv
 artifacts/
 artifacts_backup/
 metrics/
