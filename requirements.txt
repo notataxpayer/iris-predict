@@ -4,3 +4,5 @@ scikit-learn
 joblib
 flake8
 pytest
+mlflow
+dvc

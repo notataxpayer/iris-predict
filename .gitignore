@@ -1,6 +1,49 @@
+# Python envs
 .venv/
 venv/
+env/
+
+# Bytecode / caches
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Editor / OS
+.vscode/
+*.swp
 .DS_Store
+Thumbs.db
+
+# Build / archives
 *.tar
+*.zip
+
+# Data & outputs (DO NOT commit datasets/model/artifacts)
+iris.csv
+data_uji.csv
+artifacts/
+artifacts_backup/
+metrics/
+mlruns/
+
+# DVC cache / tmp (dvc may add these automatically)
+.dvc/cache/
+.dvc/tmp/
+
+# Local DVC config (if you keep secrets locally)
+.dvc/config.local
+
+# Environment files, secrets
+.env
+.env.* 
+secrets.*
+aws_credentials*
+aws_secret_*
+
+# Docker image tar (local)
+*.tar
+
+# other local generated files
+output.csv
