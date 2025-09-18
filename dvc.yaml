@@ -5,8 +5,11 @@ stages:
       - iris_classification.py
       - iris.csv
       - data_uji.csv
-    params: []
     outs:
-      - artifacts
+      - artifacts/iris_model.joblib
+      - artifacts/model.joblib
+      - artifacts/predictions.csv
+      - artifacts/confusion_matrix.csv
+      - artifacts/classification_report.json
     metrics:
       - artifacts/classification_report.json
