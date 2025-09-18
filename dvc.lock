@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python iris_classification.py --csv iris.csv --mlflow-experiment 
+      iris-predict
+    deps:
+    - path: data_uji.csv
+      hash: md5
+      md5: b2fcfcfc43757e4255274ea040a9a344
+      size: 290
+    - path: iris.csv
+      hash: md5
+      md5: 5e48884cf1c69d0b8f67d111d26d4a86
+      size: 3858
+    - path: iris_classification.py
+      hash: md5
+      md5: 0c5220d82bf30b2631625811c1589437
+      size: 8338
+    outs:
+    - path: artifacts
+      hash: md5
+      md5: 5d69a7dfdc99b3cefa46ee9350f5bb73.dir
+      size: 4124
+      nfiles: 4
+    - path: metrics/classification_report.json
+      hash: md5
+      md5: 57326a7ddae81197ca7d045578b4abf1
+      size: 831
