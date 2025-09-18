@@ -1,0 +1,5 @@
+outs:
+- md5: b2fcfcfc43757e4255274ea040a9a344
+  size: 290
+  hash: md5
+  path: data_uji.csv
