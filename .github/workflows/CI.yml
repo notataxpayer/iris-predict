@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
@@ -27,6 +27,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      
       - name: reproduce pipeline
         run: |
           rm -rf artifacts metrics
@@ -58,7 +59,7 @@ jobs:
 
   docker_push:
     needs: build
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -92,7 +93,7 @@ jobs:
 
   docker_image_artifact:
     needs: docker_push
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: read
