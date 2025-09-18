@@ -1,0 +1,12 @@
+stages:
+  train:
+    cmd: python iris_classification.py --csv iris.csv --mlflow-experiment iris-predict
+    deps:
+      - iris_classification.py
+      - iris.csv
+      - data_uji.csv
+    params: []
+    outs:
+      - artifacts
+    metrics:
+      - artifacts/classification_report.json
