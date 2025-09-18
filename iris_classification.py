@@ -168,7 +168,7 @@ def predict_from_csv(model, csv_path: str, out_path: str | None = None):
 
 def main():
     p = argparse.ArgumentParser(description="Iris classification")
-    p.add_argument("--csv", type=str, default="iris.csv", help="Path nya utk iris.csv (defaultnya: iris.csv)")
+    p.add_argument("--csv", type=str, default="iris.csv", help="Path nya untuk dataset iris.csv (defaultnya: iris.csv)")
     p.add_argument("--predict", dest="features", type=str, default=None,
                    help='Fiturnya "sepal.len,sepal.wid,petal.len,petal.wid"')
     p.add_argument("--predict-file", type=str, default=None,
