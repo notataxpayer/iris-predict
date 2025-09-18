@@ -8,18 +8,18 @@ else
   # jika ada file .dvc/config dan remote terkonfigurasi, coba pull
   if [ -f .dvc/config ] || [ -f .dvc/config.local ]; then
     echo "Running: dvc pull (to fetch data from remote)"
-    # run dvc pull but don't fail the whole container if there's no remote reachable
-    # we try once; if it fails we print a warning but continue to run the CMD anyway
+    #kalau fail kasih warning dan lanjut
     if ! dvc pull --verbose; then
       echo "Warning: dvc pull failed — continuing without pulled cache"
     fi
+    # kalau gada dvc config found
   else
     echo "No .dvc config found, skipping dvc pull"
   fi
 fi
 
-# ensure artifacts + mlruns dirs exist and are writable
+#bikin dir
 mkdir -p /app/artifacts /app/mlruns /app/metrics
 
-# then exec the container CMD (so signals are forwarded)
+#exec cmd
 exec "$@"
